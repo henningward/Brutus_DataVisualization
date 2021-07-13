@@ -27,12 +27,9 @@ dash_visualization
     
     ├── apps                   	# apps/pages of the application
     │   ├── app1.py        	# Table page
-    
     │   ├── app2.py        	# Map page
     │   ├── app3.py        	# Load data page
     │   └── app4.py        	# Graph page
-    
-    
     ├── index.py			# App navigation
     ├── app.py			# Dash app configuration
     ├── static                   	# static files
