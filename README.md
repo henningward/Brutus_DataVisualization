@@ -3,6 +3,7 @@
 ## Hvordan brukes applikasjonen?
 Applikasjonen er delt opp i fire sider
 * Tabell
+
 Her vil brukeren få muligheten til å filtrere data ut i fra stedsinformasjon, aldersspenn og fritekst. Resultatet blir presentert i en tabell.
 
 * Graf
