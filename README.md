@@ -35,7 +35,7 @@ dash_visualization
 │   ├── custom.css      # Graphic appearance configuration file
 │   ├── datasett.csv    	# .csv file with user data
 
-     .
+     
     ├── build                   # Compiled files (alternatively `dist`)
     ├── docs                    # Documentation files (alternatively `doc`)
     ├── src                     # Source files (alternatively `lib` or `app`)
