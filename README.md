@@ -38,19 +38,19 @@ Deretter vil appen være tilgjengelig ved å gå inn på denne linken i nettlese
 Applikasjon er bygget ved hjelp av [Dash Plotly](https://plotly.com/dash//), et rammeverk som muliggjør presentasjon 
 data i form av enkle applikasjoner. Applikasjonen er skrevet i Python, og er bygget opp slik:
 
-    ├── dash_visualization # Source files
-    └── README.md		# Readme file
+    ├── dash_visualization 			# Source files
+    └── README.md				# Readme file
 
-    ├── apps                   			# apps/pages of the application
+    ├── apps                   		# apps/pages of the application
     │   ├── app1.py        			# Table page
     │   ├── app2.py        			# Map page
     │   ├── app3.py        			# Load data page
     │   └── app4.py        			# Graph page
-    ├── index.py					# App navigation
-    ├── app.py					# Dash app configuration
-    ├── static                   			# static files
-    │   ├── custom.css      			# Graphic appearance configuration file
-    │   ├── datasett.csv    			# .csv file with user data
+    ├── index.py				# App navigation
+    ├── app.py				# Dash app configuration
+    ├── static                   		# static files
+    │   ├── custom.css      		# Graphic appearance configuration file
+    │   ├── datasett.csv    		# .csv file with user data
     
     
     
