@@ -111,7 +111,8 @@ def load_data_table(click, state, city, street, age, search_input):
 
     df, len_df = get_df()
         
-
+    ctx = dash.callback_context
+    
     # Checks if button is pressed (in contrast to slider manipulation)
     if not ctx.triggered:
         button_id = 'No clicks yet'
