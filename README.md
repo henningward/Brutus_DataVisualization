@@ -1,4 +1,4 @@
-# Brutus_DataVisualization
+# Brutus A/S
 
 ## Hvordan brukes applikasjonen?
 Applikasjonen er delt opp i fire sider
@@ -40,7 +40,6 @@ data i form av enkle applikasjoner. Applikasjonen er skrevet i Python, og er byg
 
     ├── dash_visualization # Source files
     └── README.md		# Readme file
-
 
     ├── apps                   		# apps/pages of the application
     │   ├── app1.py        		# Table page
