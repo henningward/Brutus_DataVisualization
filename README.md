@@ -13,13 +13,10 @@ __Følgende biblioteker må installeres for at programmet skal fungere. Bibliote
 * pip3 install sqlalchemy
 * pip3 install pyodbc
 
-.
-Applikasjon er bygget ved hjelp av Dash Plotly, et rammeverk som muliggjør presentasjon 
+Applikasjon er bygget ved hjelp av [Dash Plotly](https://plotly.com/dash/
+/)!
+, et rammeverk som muliggjør presentasjon 
 data i form av enkle applikasjoner. Applikasjonen er skrevet i Python, og er bygget opp slik:
-
-.
-
-dash_visualization 
 
     ├── dash_visualization # Source files
     └── README.md		# Readme file
@@ -38,18 +35,3 @@ dash_visualization
     
     
     
-    ├── ...
-    ├── test                    # Test files (alternatively `spec` or `tests`)
-    │   ├── app1.py          # Load and stress tests
-    │   ├── app2.py         # End-to-end, integration tests (alternatively `e2e`)
-    │   ├── app3.py         # End-to-end, integration tests (alternatively `e2e`)
-    │   └── app4.py                # Unit tests
-    └── ...
-     
-    ├── build                   # Compiled files (alternatively `dist`)
-    ├── docs                    # Documentation files (alternatively `doc`)
-    ├── src                     # Source files (alternatively `lib` or `app`)
-    ├── test                    # Automated tests (alternatively `spec` or `tests`)
-    ├── tools                   # Tools and utilities
-    ├── LICENSE
-    └── README.md
