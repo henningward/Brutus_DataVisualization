@@ -7,10 +7,14 @@ Applikasjonen er delt opp i fire sider
 Her vil brukeren få muligheten til å filtrere data ut i fra stedsinformasjon, aldersspenn og fritekst. Resultatet blir presentert i en tabell.
 
 * Graf
+
 Denne siden inneholder en graf som visualiserer aldersfordelingen blant brukerne. Her er det også mulig å filtere på stater, for å få en mer detaljert presentasjon.
 * Kart
+
 Her får man muligheten til å se fordelingen av antall brukere utover alle de amerikanske statene, presentert i et koropletkart. En nedtrekksmeny gir også muligheten for å se hva som er gjennomsnittsalderen på brukerne fra hver enkelt stat.
+
 * Last opp fil
+
 På denne siden kan man laste opp .csv eller .xls filer med brukerdata. Man får også muligheten til å laste ned brukerdata fra en MySQL-server, samt laste opp brukerdata til samme server. Merk at ved å laste opp, vil gammel data bli erstattet.
 Server-funksjonaliteten er for øyeblikket utilgjengelig uten VPN-tilkobling, som et sikkerhetsmessig tiltak.
 
