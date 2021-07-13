@@ -1,7 +1,7 @@
 from dash.dependencies import Input, Output, State
 import dash_html_components as html
 import dash_core_components as dcc
-
+import dash
 #import mysql.connector
 #from mysql.connector import Error
 import sqlalchemy
@@ -60,7 +60,8 @@ def download_df_from_sql():
 # Uploads the current dataframe to "brutus" table in mySQL-server
 def upload_df_to_sql():
     success = False
-
+    if len(df.index) < 1:
+        return False
     tableName = "brutus"
     try:
         sqlEngine = create_engine("mysql+pymysql://ward:Password123@192.168.0.67:3306/ward")
@@ -164,23 +165,44 @@ def update_output(list_of_contents, list_of_names, list_of_dates):
 @app.callback(Output('file-download-success', 'children'),
                 Input('download-from-database-button', 'n_clicks'))
 def download_from_database(clicks):
-    if download_df_from_sql():
-        result =  html.Div(html.P("Data lastet ned!")) 
+    ctx = dash.callback_context
+    # Checks if button is pressed (in contrast to slider manipulation)
+    if not ctx.triggered:
+        button_id = 'No clicks yet'
     else:
-        result =  html.Div(html.P("Filen kunne ikke lastes ned fra serveren")) 
+        button_id = ctx.triggered[0]['prop_id'].split('.')[0]
 
-    return result
+    #only upload if button is pressed
+    if (button_id == 'download-from-database-button'):
+        if download_df_from_sql():
+            result =  html.Div(html.P("Data lastet ned!")) 
+        else:
+            result =  html.Div(html.P("Filen kunne ikke lastes ned fra serveren")) 
+        return result
+    return ""
 
 # ------------------------------------------------------------------------------
 # Upload data manually to database (button)
 @app.callback(Output('file-upload-success', 'children'),
                 Input('upload-to-database-button', 'n_clicks'))
 def upload_to_database(clicks):
-    if upload_df_to_sql() == True:
-        return html.Div([
-            html.P("Database oppdatert!"),])
+
+    ctx = dash.callback_context
+    # Checks if button is pressed (in contrast to slider manipulation)
+    if not ctx.triggered:
+        button_id = 'No clicks yet'
     else:
-        return html.Div([
-            html.P("Database kunne ikke oppdateres!"),])
+        button_id = ctx.triggered[0]['prop_id'].split('.')[0]
+    s = len(df.index)
+    #only upload if button is pressed
+    if (button_id == "upload-to-database-button"):
+        if upload_df_to_sql() == True:
+            return html.Div([
+                html.P("Database oppdatert!"),])
+#                html.P("antall rader:" + str(s)),])               
+        else:
+            return html.Div([
+                html.P("Database kunne ikke oppdateres!"),])
+    return ""
 
 
