@@ -34,10 +34,19 @@ dash_visualization
 ├── static                   	# static files
 │   ├── custom.css      # Graphic appearance configuration file
 │   ├── datasett.csv    	# .csv file with user data
-
+    
+    
+    
+    ├── ...
+    ├── test                    # Test files (alternatively `spec` or `tests`)
+    │   ├── app1.py          # Load and stress tests
+    │   ├── app2.py         # End-to-end, integration tests (alternatively `e2e`)
+    │   ├── app3.py         # End-to-end, integration tests (alternatively `e2e`)
+    │   └── app4.py                # Unit tests
+    └── ...
      
-├── build                   # Compiled files (alternatively `dist`)
-├── docs                    # Documentation files (alternatively `doc`)
+    ├── build                   # Compiled files (alternatively `dist`)
+    ├── docs                    # Documentation files (alternatively `doc`)
     ├── src                     # Source files (alternatively `lib` or `app`)
     ├── test                    # Automated tests (alternatively `spec` or `tests`)
     ├── tools                   # Tools and utilities
