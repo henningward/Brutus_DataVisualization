@@ -33,7 +33,7 @@ def layout():
     return html.Div([ 
         html.Div(className='Row',children=[
                 html.Div(className='col-lg-12 page-header',children=[
-                    html.H3(className='text-center',children='Trykk \"generer tabell\" for å generere tabell med valgte filtre. Tabellen vil automatisk genereres ved færre enn 10000 treff')])
+                    html.H3(className='text-center',children='Tabell')])
             ]),
 
 
@@ -45,7 +45,12 @@ def layout():
         dcc.Dropdown(id='dropdown_city',  style={'width': '150px'}, multi=False, placeholder = "Velg en by"),
         dcc.Dropdown(id='dropdown_street', style={'width': '150px'}, multi=False, placeholder = "Velg en gate"),
 
-        html.P("Juster nedre og øvre grense på alder:"),
+        #html.P("Juster nedre og øvre grense på alder:"),
+
+        html.Br(), # Horizontal blank
+        html.Br(), # Horizontal blank
+ 
+
         html.Div(style = {'width': '60%', 'display': 'inline_block', 'align-items': 'center', 'justify-content': 'center'}, children=dcc.RangeSlider(id='slider_age',
                                               updatemode='drag',
                                               min=df["age"].min(),
@@ -59,6 +64,8 @@ def layout():
                                                 },
                                               value=[df["age"].min(), df["age"].max()]
         )),
+        html.Br(), # Horizontal blank
+ 
         html.Div(id='rng_slider_vals'),
 
         html.Br(), # Horizontal blank
@@ -70,6 +77,8 @@ def layout():
 
         html.Hr(), # Horizontal line
         
+        html.P("Trykk \"generer tabell\" for å generere tabell med valgte filtre. Tabellen vil automatisk genereres ved færre enn 10000 treff"),
+
         html.Hr(), # Horizontal line
         
         html.Div(id='output-datatable')
