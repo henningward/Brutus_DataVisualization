@@ -1,5 +1,20 @@
 # Brutus_DataVisualization
 
+## Hvordan brukes applikasjonen?
+Applikasjonen er delt opp i fire sider
+* Tabell
+Her vil brukeren få muligheten til å filtrere data ut i fra stedsinformasjon, aldersspenn og fritekst. Resultatet blir presentert i en tabell.
+
+* Graf
+Denne siden inneholder en graf som visualiserer aldersfordelingen blant brukerne. Her er det også mulig å filtere på stater, for å få en mer detaljert presentasjon.
+* Kart
+Her får man muligheten til å se fordelingen av antall brukere utover alle de amerikanske statene, presentert i et koropletkart. En nedtrekksmeny gir også muligheten for å se hva som er gjennomsnittsalderen på brukerne fra hver enkelt stat.
+* Last opp fil
+På denne siden kan man laste opp .csv eller .xls filer med brukerdata. Man får også muligheten til å laste ned brukerdata fra en server. 
+
+## Hva løser applikasjonen?
+Applikasjonen muliggjør rask visualisering av data, ved å presentere data i en dynamisk tabell med en rekke ulike filtreringsmuligheter. Applikasjonen gir deg også mulighet til å enkelt identifisere trender på tvers av datamengdene ved å visualisere den både som graf og i et kart. Dette vil gjør det enklere å se etter trender i datamengden.
+
 ## Hvordan kjører jeg programmet?
 #### For at programmet skal fungere må [python3](https://www.python.org/downloads/)  være installert.
  
@@ -14,7 +29,7 @@ __Følgende biblioteker må installeres for at programmet skal fungere. Bibliote
 * pip3 install sqlalchemy
 * pip3 install pyodbc
 
-Når dette er gjort, er det bare å kjøre filen **index.py**, ved å skrive **python3 index.py** i terminalen.
+Når dette er gjort, er det bare å kjøre filen **index.py**, ved å skrive **python3 index.py** i terminalen, eller ved å bruke en valgfri IDE.
 Deretter vil appen være tilgjengelig ved å gå inn på denne linken i nettleseren:
 * [http://127.0.0.1:8050/apps](http://127.0.0.1:8050/apps) 
 

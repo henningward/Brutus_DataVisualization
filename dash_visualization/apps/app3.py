@@ -111,7 +111,9 @@ def layout():
         # Allow multiple files to be uploaded
         multiple=True
     ),
-    html.Button(id="download-from-database-button", children="Last ned forrige versjon"),
+    html.Button(id="download-from-database-button", children="Last ned fra server"),
+    html.Button(id="upload-to-database-button", children="Last opp til server"),
+    html.Div(id='file-upload-success'),
     html.Div(id='file-download-success'),
 
     html.Div(id='output-file'),
@@ -138,16 +140,11 @@ def parse_contents(contents, filename, date):
             'There was an error processing this file.'
         ])
 
-    if upload_df_to_sql() == True:
-        return html.Div([
-            html.P("Filen ble lastet opp!"),
-            html.P("Database oppdatert!"),
+    return html.Div([
+            html.P("Filen ble hentet!"),
+            html.P("Husk å laste opp til databasen!"),
             html.H5("filnavn: " + filename),])
-    else:
-        return html.Div([
-            html.P("Filen ble lastet opp lokalt!"),
-            html.P("Database kunne ikke oppdateres!"),
-            html.H5("filnavn: " + filename),])
+
 
 # ------------------------------------------------------------------------------
 # Load file and parse data
@@ -173,3 +170,17 @@ def download_from_database(clicks):
         result =  html.Div(html.P("Filen kunne ikke lastes ned fra serveren")) 
 
     return result
+
+# ------------------------------------------------------------------------------
+# Upload data manually to database (button)
+@app.callback(Output('file-upload-success', 'children'),
+                Input('upload-to-database-button', 'n_clicks'))
+def upload_to_database(clicks):
+    if upload_df_to_sql() == True:
+        return html.Div([
+            html.P("Database oppdatert!"),])
+    else:
+        return html.Div([
+            html.P("Database kunne ikke oppdateres!"),])
+
+
