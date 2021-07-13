@@ -24,7 +24,7 @@ Applikasjonen muliggjør rask visualisering av data, ved å presentere data i en
 ## Hvordan kjører jeg programmet?
 #### For at programmet skal fungere må [python3](https://www.python.org/downloads/)  være installert.
  
-#### Det er også en fordel å installere [pip](https://www.geeksforgeeks.org/how-to-install-pip-on-windows/)!
+#### Det er også en fordel å installere [pip](https://www.geeksforgeeks.org/how-to-install-pip-on-windows/).
  
 __Følgende biblioteker må installeres for at programmet skal fungere. Bibliotekene kan installeres ved å lime inn teksten under i terminalen.__
  
@@ -40,8 +40,7 @@ Deretter vil appen være tilgjengelig ved å gå inn på denne linken i nettlese
 * [http://127.0.0.1:8050/apps](http://127.0.0.1:8050/apps) 
 
 ## Hvordan er applikasjonen bygget?
-Applikasjon er bygget ved hjelp av [Dash Plotly](https://plotly.com/dash//), et rammeverk som muliggjør presentasjon 
-data i form av enkle applikasjoner. Applikasjonen er skrevet i Python, og er bygget opp slik:
+Applikasjon er bygget ved hjelp av [Dash Plotly](https://plotly.com/dash//), et rammeverk som muliggjør presentasjon av data i form av enkle applikasjoner. Applikasjonen er skrevet i Python, og er bygget opp slik:
 
     ├── dash_visualization 			# Source files
     └── README.md				# Readme file
