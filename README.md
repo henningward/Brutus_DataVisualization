@@ -1,12 +1,10 @@
 # Brutus_DataVisualization
  
- - For at programmet skal fungere må python3 være installert:
- * https://www.python.org/downloads/
+## For at programmet skal fungere må [python3!](https://www.python.org/downloads/)  være installert.
  
- - Det er også en fordel å ha pip installert:
- https://www.geeksforgeeks.org/how-to-install-pip-on-windows/
+## Det er også en fordel å installere [pip!](https://www.geeksforgeeks.org/how-to-install-pip-on-windows/) 
  
- Følgende biblioteker må installeres for at programmet skal fungere. Bibliotekene kan installeres ved å lime inn teksten under i terminalen.
+__Følgende biblioteker må installeres for at programmet skal fungere. Bibliotekene kan installeres ved å lime inn teksten under i terminalen.__
  
 pip3 install dash
 pip3 install PyMySql
