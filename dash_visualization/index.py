@@ -33,7 +33,6 @@ app.layout=html.Div([
     ,html.Div(id='page-content')
 ])
 
-
 # ------------------------------------------------------------------------------
 # Callback for page navigation. 
 @app.callback(Output('page-content', 'children'),

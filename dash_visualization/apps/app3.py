@@ -2,8 +2,8 @@ from dash.dependencies import Input, Output, State
 import dash_html_components as html
 import dash_core_components as dcc
 
-import mysql.connector
-from mysql.connector import Error
+#import mysql.connector
+#from mysql.connector import Error
 import sqlalchemy
 from sqlalchemy import create_engine
 import pyodbc
@@ -19,7 +19,7 @@ import io
 
 #global dataframe variable.. 
 global df 
-
+global online
 # ------------------------------------------------------------------------------
 # Returns dataframe
 def get_df():
@@ -29,13 +29,15 @@ def get_df():
 # Downloads the "brutus" table from mySQL-server
 def download_df_from_sql():
     global df
+    global online
     success = False
-    sqlEngine = create_engine("mysql+pymysql://ward:Password123@192.168.0.67:3306/ward")
-    dbConnection = sqlEngine.connect()
 
     try:
+        sqlEngine = create_engine("mysql+pymysql://ward:Password123@192.168.0.67:3306/ward")
+        dbConnection = sqlEngine.connect()
         df = pd.read_sql_query('''SELECT * FROM brutus''', con=dbConnection)
         success = True
+        online = True
     except ValueError as vx:
 
         print(vx)
@@ -46,9 +48,9 @@ def download_df_from_sql():
 
     else:
 
-        print("Data retreived successfully, with length %s."%len(df.index));   
+        print("Data retreived successfully, with length %s."%len(df.index))   
     
-    finally:
+#    finally:
 
         dbConnection.close()
         print("MySQL connection is closed")
@@ -58,12 +60,12 @@ def download_df_from_sql():
 # Uploads the current dataframe to "brutus" table in mySQL-server
 def upload_df_to_sql():
     success = False
-    sqlEngine = create_engine("mysql+pymysql://ward:Password123@192.168.0.67:3306/ward")
-    dbConnection = sqlEngine.connect()
+
     tableName = "brutus"
     try:
-
-        frame = df.to_sql(tableName, dbConnection, if_exists='replace');
+        sqlEngine = create_engine("mysql+pymysql://ward:Password123@192.168.0.67:3306/ward")
+        dbConnection = sqlEngine.connect()
+        frame = df.to_sql(tableName, dbConnection, if_exists='replace')
         success = True
     
     except ValueError as vx:
@@ -76,9 +78,9 @@ def upload_df_to_sql():
 
     else:
 
-        print("Table %s created successfully."%tableName);   
+        print("Table %s created successfully."%tableName)   
 
-    finally:
+    #finally:
 
         dbConnection.close()
         print("MySQL connection is closed")
@@ -136,13 +138,16 @@ def parse_contents(contents, filename, date):
             'There was an error processing this file.'
         ])
 
-    upload_df_to_sql()
-    return html.Div([
-        html.P("Filen ble lastet opp!"),
-        html.P("Database oppdatert!"),
-        html.H5("filnavn: " + filename),
-
-    ])
+    if upload_df_to_sql() == True:
+        return html.Div([
+            html.P("Filen ble lastet opp!"),
+            html.P("Database oppdatert!"),
+            html.H5("filnavn: " + filename),])
+    else:
+        return html.Div([
+            html.P("Filen ble lastet opp lokalt!"),
+            html.P("Database kunne ikke oppdateres!"),
+            html.H5("filnavn: " + filename),])
 
 # ------------------------------------------------------------------------------
 # Load file and parse data
@@ -165,6 +170,6 @@ def download_from_database(clicks):
     if download_df_from_sql():
         result =  html.Div(html.P("Data lastet ned!")) 
     else:
-        result =  html.Div(html.P("Feil! Forsøk å laste opp filen på nytt")) 
+        result =  html.Div(html.P("Filen kunne ikke lastes ned fra serveren")) 
 
     return result
