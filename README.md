@@ -46,6 +46,7 @@ Applikasjon er bygget ved hjelp av [Dash Plotly](https://plotly.com/dash//), et 
     ├── dash_visualization 			# Source files
     └── README.md				# Readme file
 
+dash_visualization 
     ├── apps                   		# apps/pages of the application
     │   ├── app1.py        			# Table page
     │   ├── app2.py        			# Map page
