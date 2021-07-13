@@ -62,3 +62,5 @@ Applikasjon er bygget ved hjelp av [Dash Plotly](https://plotly.com/dash//), et 
     
     
     
+    
+    
