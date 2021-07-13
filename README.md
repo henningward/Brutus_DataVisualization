@@ -58,7 +58,6 @@ Applikasjon er bygget ved hjelp av [Dash Plotly](https://plotly.com/dash//), et 
     ├── app.py				# Dash app configuration
     ├── static                   		# static files
     │   ├── custom.css      		# Graphic appearance configuration file
-    │   ├── datasett.csv    		# .csv file with user data
     
     
     
