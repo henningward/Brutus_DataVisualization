@@ -193,7 +193,7 @@ def upload_to_database(clicks):
         button_id = 'No clicks yet'
     else:
         button_id = ctx.triggered[0]['prop_id'].split('.')[0]
-    s = len(df.index)
+    #s = len(df.index)
     #only upload if button is pressed
     if (button_id == "upload-to-database-button"):
         if upload_df_to_sql() == True:

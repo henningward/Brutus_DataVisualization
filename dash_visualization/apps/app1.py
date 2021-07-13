@@ -50,6 +50,13 @@ def layout():
                                               updatemode='drag',
                                               min=df["age"].min(),
                                               max=df["age"].max(),
+                                              marks={
+                                                    20: '20 år',
+                                                    30: '30 år',
+                                                    40: '40 år',
+                                                    50: '50 år',
+                                                    60: '60 år',
+                                                },
                                               value=[df["age"].min(), df["age"].max()]
         )),
         html.Div(id='rng_slider_vals'),
@@ -103,7 +110,7 @@ def filter(state=None, city=None, street=None, age=None, search_input=None):
 def load_data_table(click, state, city, street, age, search_input):
 
     df, len_df = get_df()
-    ctx = dash.callback_context
+        
 
     # Checks if button is pressed (in contrast to slider manipulation)
     if not ctx.triggered:
