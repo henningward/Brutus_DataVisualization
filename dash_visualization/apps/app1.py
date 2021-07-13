@@ -12,7 +12,7 @@ import pandas as pd
 import numpy as np
 
 from app import app
-from apps.app3 import get_df, download_df_from_sql
+from apps.app3 import get_df, download_df_from_sql, df_exists
 
 import base64
 import datetime
@@ -23,7 +23,8 @@ import io
 def layout():
 
     #this is done in order to ensure that the dataframe exists in the application
-    download_df_from_sql()
+    if not df_exists():
+        download_df_from_sql()
     try:
         df, len_df = get_df()
     except:

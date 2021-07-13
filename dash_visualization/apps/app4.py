@@ -11,7 +11,7 @@ import pandas as pd
 import numpy as np
 
 from app import app
-from apps.app3 import get_df, download_df_from_sql
+from apps.app3 import get_df, download_df_from_sql, df_exists
 
 import base64
 import datetime
@@ -20,7 +20,8 @@ import io
 # ------------------------------------------------------------------------------
 # Layout for graph-page
 def layout():
-    download_df_from_sql()
+    if not df_exists():
+        download_df_from_sql()
     df, len_df = get_df()
     dropdownopt = GenerateDropDownOptions()
 

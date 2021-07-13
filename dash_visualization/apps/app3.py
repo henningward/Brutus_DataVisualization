@@ -20,6 +20,12 @@ import io
 #global dataframe variable.. 
 global df 
 global online
+
+# ------------------------------------------------------------------------------
+# Checks if global variable exists
+def df_exists():
+    return 'df' in globals()
+    
 # ------------------------------------------------------------------------------
 # Returns dataframe
 def get_df():
