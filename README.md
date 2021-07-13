@@ -1,5 +1,8 @@
 # Brutus A/S
 
+## Hva løser applikasjonen?
+Applikasjonen muliggjør rask visualisering av data, ved å presentere data i en dynamisk tabell med en rekke ulike filtreringsmuligheter. Applikasjonen gir deg også mulighet til å enkelt identifisere trender på tvers av datamengdene ved å visualisere den både i en graf og i et kart. 
+
 ## Hvordan brukes applikasjonen?
 #### Applikasjonen er delt opp i fire sider:
 
@@ -18,9 +21,6 @@ Her får man muligheten til å se fordelingen av antall brukere utover alle de a
 
 På denne siden kan man laste opp .csv eller .xls filer med brukerdata. Man får også muligheten til å laste ned brukerdata fra en MySQL-server, samt laste opp brukerdata til samme server. Merk at ved å laste opp, vil gammel data bli erstattet.
 Server-funksjonaliteten er for øyeblikket utilgjengelig uten VPN-tilkobling, som et sikkerhetsmessig tiltak.
-
-## Hva løser applikasjonen?
-Applikasjonen muliggjør rask visualisering av data, ved å presentere data i en dynamisk tabell med en rekke ulike filtreringsmuligheter. Applikasjonen gir deg også mulighet til å enkelt identifisere trender på tvers av datamengdene ved å visualisere den både i en graf og i et kart. 
 
 ## Hvordan kjører jeg programmet?
 #### For at programmet skal fungere må [python3](https://www.python.org/downloads/)  være installert.
