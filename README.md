@@ -13,8 +13,7 @@ __Følgende biblioteker må installeres for at programmet skal fungere. Bibliote
 * pip3 install sqlalchemy
 * pip3 install pyodbc
 
-Applikasjon er bygget ved hjelp av [Dash Plotly](https://plotly.com/dash/
-/)!
+Applikasjon er bygget ved hjelp av [Dash Plotly](https://plotly.com/dash//)!
 , et rammeverk som muliggjør presentasjon 
 data i form av enkle applikasjoner. Applikasjonen er skrevet i Python, og er bygget opp slik:
 
