@@ -1,5 +1,6 @@
 # Brutus_DataVisualization
- 
+
+## Hvordan kjører jeg programmet?
 #### For at programmet skal fungere må [python3](https://www.python.org/downloads/)  være installert.
  
 #### Det er også en fordel å installere [pip](https://www.geeksforgeeks.org/how-to-install-pip-on-windows/)!
@@ -13,8 +14,12 @@ __Følgende biblioteker må installeres for at programmet skal fungere. Bibliote
 * pip3 install sqlalchemy
 * pip3 install pyodbc
 
-Applikasjon er bygget ved hjelp av [Dash Plotly](https://plotly.com/dash//)!
-, et rammeverk som muliggjør presentasjon 
+Når dette er gjort, er det bare å kjøre filen **index.py**, ved å skrive **python3 index.py** i terminalen.
+Deretter vil appen være tilgjengelig ved å gå inn på denne linken i nettleseren:
+* [http://127.0.0.1:8050/apps](http://127.0.0.1:8050/apps) 
+
+## Hvordan er applikasjonen bygget?
+Applikasjon er bygget ved hjelp av [Dash Plotly](https://plotly.com/dash//), et rammeverk som muliggjør presentasjon 
 data i form av enkle applikasjoner. Applikasjonen er skrevet i Python, og er bygget opp slik:
 
     ├── dash_visualization # Source files
